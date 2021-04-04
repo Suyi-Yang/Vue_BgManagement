@@ -134,7 +134,7 @@ export default {
       addFormRules: { //[添加用户]表单的验证规则对象
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 10, message: '长度在3~10个字符', trigger: 'blur', },
+          { min: 3, max: 10, message: '长度在3~10个字符', trigger: 'blur' },
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
@@ -204,7 +204,7 @@ export default {
         // 通过验证 则发起[添加用户的网络请求]
         const {data:res} = await this.$http.post('users',this.addForm)
         if(res.meta.status!==201){
-          this.$message.error('添加用户失败！')
+          return this.$message.error('添加用户失败！')
         }
         this.$message.success('添加用户成功！')
         this.addDialogVisible = false // 隐藏对话框
@@ -236,7 +236,7 @@ export default {
       })
     },
     removeUserById(id){ // 根据id删除对应的用户信息
-      console.log(id);
+      // console.log(id);
       // 弹框询问用户是否删除数据
       this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
           confirmButtonText: '确定',
@@ -246,7 +246,7 @@ export default {
           const {data:res} = await this.$http.delete('users/'+id)
           if(res.meta.status!==200) return this.$message.error('删除用户失败！')
           this.getUserList() // 刷新用户列表
-          this.$message({ type: 'success', message: '删除成功!' });
+          this.$message({ type: 'success', message: '删除用户成功!' });
         }).catch(() => {
           this.$message({ type: 'info', message: '已取消删除' });          
         });
