@@ -6,7 +6,8 @@ import {
   Breadcrumb,BreadcrumbItem,
   Card,Row,Col,
   Table,TableColumn,
-  Switch,Tooltip,Pagination
+  Switch,Tooltip,Pagination,Dialog,
+  MessageBox
 } from 'element-ui'
 
 Vue.use(Button)
@@ -30,5 +31,7 @@ Vue.use(TableColumn)
 Vue.use(Switch)
 Vue.use(Tooltip)
 Vue.use(Pagination)
+Vue.use(Dialog)
 // 将[弹框提示-组件]挂载为Vue原型对象上的属性
 Vue.prototype.$message=Message
+Vue.prototype.$confirm=MessageBox.confirm
