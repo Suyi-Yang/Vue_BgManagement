@@ -7,7 +7,7 @@ import {
   Card,Row,Col,
   Table,TableColumn,
   Switch,Tooltip,Pagination,Dialog,
-  MessageBox,Tag,Tree,Select,Option
+  MessageBox,Tag,Tree,Select,Option,Cascader
 } from 'element-ui'
 
 Vue.use(Button)
@@ -36,6 +36,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 // 将[弹框提示-组件]挂载为Vue原型对象上的属性
 Vue.prototype.$message=Message
 Vue.prototype.$confirm=MessageBox.confirm

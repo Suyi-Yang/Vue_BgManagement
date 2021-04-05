@@ -150,7 +150,7 @@ export default {
       queryInfo:{ // 获取用户列表的参数对象
         query: '', // 查询参数
         pagenum: 1, // 当前页码
-        pagesize: 2 // 每页显示条数
+        pagesize: 5 // 每页显示条数
       },
       userlist: [], //返回得到的用户列表
       total: 0, //返回得到的用户总数
