@@ -22,6 +22,18 @@ Vue.config.productionTip = false
 
 Vue.component('tree-table', TreeTable)
 
+// 自定义格式化时间的全局过滤器
+Vue.filter('dateFormat', function(originVal){
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth()+1+'').padStart(2,'0')
+  const d = (dt.getMonth()+'').padStart(2,'0')
+  const hh = (dt.getMonth()+'').padStart(2,'0')
+  const mm = (dt.getMonth()+'').padStart(2,'0')
+  const ss = (dt.getMonth()+'').padStart(2,'0')
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
+
 new Vue({
   router,
   render: h => h(App)
