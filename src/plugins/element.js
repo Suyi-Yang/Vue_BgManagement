@@ -10,7 +10,8 @@ import {
   MessageBox,Tag,Tree,Select,Option,Cascader,
   Alert,Tabs,TabPane,Steps,Step,
   CheckboxGroup,Checkbox,
-  Upload
+  Upload,Timeline,TimelineItem,
+  RadioGroup,Radio
 } from 'element-ui'
 
 Vue.use(Button)
@@ -48,6 +49,10 @@ Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(Checkbox)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
+Vue.use(RadioGroup)
+Vue.use(Radio)
 // 将[弹框提示-组件]挂载为Vue原型对象上的属性
 Vue.prototype.$message=Message
 Vue.prototype.$confirm=MessageBox.confirm
