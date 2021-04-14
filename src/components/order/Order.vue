@@ -58,8 +58,7 @@
       <el-dialog
         title="修改订单"
         :visible.sync="orderDialogVisible"
-        width="50%"
-        @close="closeOrderDialog">
+        width="50%">
         <el-form ref="orderFormRef" :model="orderForm" label-width="80px">
           <el-form-item label="订单编号">
             <el-input v-model="orderForm.order_number" :disabled="true"></el-input>
@@ -108,8 +107,7 @@
             <el-cascader
               v-model="editForm.address1"
               :options="cityData"
-              :props="{ expandTrigger: 'hover' }"
-              @change="handleChange">
+              :props="{ expandTrigger: 'hover' }">
             </el-cascader>
           </el-form-item>
           <el-form-item label="详细地址" prop="address2">
@@ -267,9 +265,6 @@ export default {
     closeEditDialog(){
       this.$refs.editFormRef.resetFields()
     },
-    handleChange(val){ //[省市区县]改变时
-      console.log(val); //级联选项值的数组
-    },
     async showProgressDialog(){ //[查询物流进度] ***测试单号有问题(查不到)
       // const {data:res} = await this.$http.get('/kuaidi/1106975712662')
       // // console.log(res);
@@ -293,9 +288,6 @@ export default {
       // console.log('show-form数据1',this.orderForm);
 
       this.orderDialogVisible = true
-    },
-    closeOrderDialog(){
-      console.log('reset');
     },
     async updateOrderInfo(){
       // 1.收集表单数据

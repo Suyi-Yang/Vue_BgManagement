@@ -194,6 +194,7 @@ export default {
   },
   created(){
     this.getUserList()
+    console.log('test');
   },
   methods: {
     async getUserList(){
